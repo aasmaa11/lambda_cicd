@@ -1,6 +1,6 @@
 name: Validate CloudFormation on PR
 on:
-  pul_request:
+  pull_request:
     paths:
       - "cloudformation/**"
 
