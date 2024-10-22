@@ -4,7 +4,7 @@ on:
     branches:
       - main # only trigger workflow when pushing to main
     paths:
-      - "lambda/" # only runs when files in lambda directory changed
+      - "lambda/**" # only runs when files in lambda directory changed
 
 jobs:
   deploy-lambda: # name of job
@@ -22,7 +22,7 @@ jobs:
           python -m pip install --upgrade pip
           pip instll -r lambda/requirements.txt -t lambda/
 
-      - name: Configure AWS Creds # sets up our AWS credentials
+      - name: Configure AWS Credentials # sets up our AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
