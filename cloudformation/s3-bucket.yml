@@ -11,7 +11,7 @@ Parameters:
       - production
 
 Resources:
-  MyS3Bucket:
+  MyBucket:
     Type: "AWS::S3::Bucket"
     Properties:
       BucketName: !Sub "${AWS::StackName}-${Environment}-bucket"
@@ -24,4 +24,4 @@ Resources:
 Outputs:
   BucketName:
     Description: "Name of the created S3 Bucket"
-    Value: !Ref MyS3Bucket
+    Value: !Ref MyBucket
